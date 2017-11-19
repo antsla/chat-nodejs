@@ -1,0 +1,21 @@
+doctype
+html
+ head
+  title="NodeJS Chat"
+  link(rel="stylesheet", type="text/css", href="style.css")
+  script(src="/lib/jquery-3.2.1.min.js")
+  script(src="/chat.js")
+  script(src="/socket.io/socket.io.js")
+ body
+  .chat_window
+   form#regUser.regUser(onsubmit="return false;")
+    label(for="enterName")="Введите Ваше имя:"
+    input#enterName(autocomplete="off")
+   .top_menu
+    .title="Чат"
+   ul#content.messages
+   form#form.bottom_wrapper.clearfix(onsubmit="return false;")
+    .message_input_wrapper
+     input#text.message_input(placeholder="Введите сообщение...",autocomplete="off")
+    input.send_message(type="submit", value="Отправить")
+    .message_template
